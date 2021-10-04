@@ -3,10 +3,13 @@ simple money management web app with flask and chartjs
 
 ## Installation ( Linux ) 
 
+
+```sh
 sudo apt-get install git python3 
 git clone https://github.com/gibran-abdillah/moma
 cd moma
 pip install -r requirements.txt 
+```
 
 ## run
 
