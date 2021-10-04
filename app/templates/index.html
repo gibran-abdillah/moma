@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Hello World!</title>
+    </head>
+<body>
+    <h1>Hello World</h1>
+    <!--
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js'></script>
+    -->
+    <input type='text' id='income' placeholder='enter income'>
+    <button type='button' id='addincome'>Add Income</button>
+    <br><br>
+    <input type='text' id='outcome' placeholder="enter outcome">
+    <button type='button' id='addoutcome'>Add Outcome</button>
+    <canvas id='canvas'></canvas>
+    <p id='total_income'></p>
+    <p id='total_outcome'></p>
+    <p id='avg_income'></p>
+    <o id='avg_outcome'></o>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+    <script type='text/javascript' src='{{url_for("static", filename="js/script.js")}}'></script>
+</body>
+</html>
