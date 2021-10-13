@@ -50,19 +50,23 @@
     function store_data(m) {
         var kons = load_data(m)
         kons.then(function(resp) {
-            Object.keys(resp).forEach(i => {
-                let total_inc = 0;
-                let total_out = 0;
+            if(resp){
+                Object.keys(resp).forEach(i => {
+                    let total_inc = 0;
+                    let total_out = 0;
 
-                total_inc += resp[i].income 
-                total_out += resp[i].outcome 
+                    total_inc += resp[i].income 
+                    total_out += resp[i].outcome 
 
-                total_income.innerHTML = 'total income ' + total_inc 
-                total_outcome.innerHTML = 'total outcome ' + total_out 
- 
-                avg_income.innerHTML = 'average income ' + parseInt(total_inc / resp[i].inc_data)
-                avg_outcome.innerHTML = 'average outcome ' + parseInt(total_out / resp[i].out_data)
-            })
+                    total_income.innerHTML = 'total income ' + total_inc 
+                    total_outcome.innerHTML = 'total outcome ' + total_out 
+    
+                    avg_income.innerHTML = 'average income ' + parseInt(total_inc / resp[i].inc_data)
+                    avg_outcome.innerHTML = 'average outcome ' + parseInt(total_out / resp[i].out_data)
+                })
+            }else{
+                alert('no data for shown');
+            }
         })
     }
 
@@ -72,6 +76,12 @@
         let response = await fetch(endpoint_uri)
         let json_response = await response.json()
         let json_keys = await Object.keys(json_response)
+        let resp_length = await json_keys.length
+
+        if(resp_length == 0 ){
+            return false
+        }
+
         for(let i in json_keys){
             dataChart.labels[i] = json_keys[i]
             dataChart.datasets[0].data[i] = json_response[json_keys[i]].income
@@ -98,12 +108,21 @@
         outcome.val('')
 
     })
+    $('#showb').on('click', function(){
+        var shown = parseInt($('#shown').val())
+        if(isNaN(shown)){
+            alert('please enter the valid number of month')
+        }else{
+            console.log(shown)
+            store_data(shown)
+        }
 
+    })
     socket.on('message', function(data){
         alert(data);
-        store_data(10)
+        store_data(default_month)
     })
-    store_data(10)
+    store_data(default_month)
 
     
 
