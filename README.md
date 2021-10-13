@@ -17,6 +17,6 @@ python3 server.py
 
 ### Screenshot
 
-![ScreenShot](https://raw.github.com/gibran-abdillah/moma/main/screenshot.jpg)
+![ScreenShot](https://raw.github.com/gibran-abdillah/moma/main/screenshot.png)
 
 
