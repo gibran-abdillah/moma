@@ -1,7 +1,7 @@
 # moma
 simple money management web app with flask and chartjs 
 
-## Installation ( Linux ) 
+## Installations ( Linux ) 
 
 
 ```sh
@@ -15,7 +15,8 @@ pip install -r requirements.txt
 
 python3 server.py 
 
-### Screenshots
+### Screenshot
 
 ![ScreenShot](https://raw.github.com/gibran-abdillah/moma/main/screenshot.jpg)
+
 
